@@ -15,7 +15,7 @@
     <div class="card mb-3">
         <div class="card-body">
             {% for blog in blogs %}
-                <li><a href="{% url 'blogs:blog' blog.id %}">{{blog.name|title}}</a></li>
+            <li><h3><a href="{% url 'blogs:blog' blog.id %}">{{blog.name|title}}</a></h3></li>
             {% empty %}
                 <p>Você ainda não postou nenhum blog</p>
             {% endfor %}
