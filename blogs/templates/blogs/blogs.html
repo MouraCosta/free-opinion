@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'blogs/base.html' %}
+
+{% block page_header %}
+    <h3>Blogs</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <h3><a href="{% url 'blogs:new_blog' %}">Crie um blog</a></h3>
+    <div class="card mb-3">
+        <div class="card-body">
+            <ul>
+        {% for blog in blogs %}
+        <li><h3>
+            <a href="{% url 'blogs:blog' blog.id %}">{{ blog.name }}</a>
+        </h3></li>
+        {% empty %}
+        <li><h3>
+            Não temos nenhum blog postado ainda. Seja o primeiro
+        </h3></li>
+        {% endfor %}
+    </ul>
+        </div>
+    </div>
+{% endblock content %}
+</body>
+</html>

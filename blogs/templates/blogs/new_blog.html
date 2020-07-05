@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+    <h3>Criação do blog</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <form action="{% url 'blogs:new_blog' %}" method="post"
+    class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+        <button class="btn btn-primary" name="submit" value="{% url 'blogs:blogs' %}">
+            Terminar Criação</button>
+        {% endbuttons %}
+    </form>
+{% endblock content %}
+</body>
+</html>

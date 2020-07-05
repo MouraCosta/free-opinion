@@ -1,0 +1,17 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyShadowingNamesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="learning_logs.models.Topic.*" />
+          <option value="learning_logs.models.Entry.*" />
+          <option value="blogs.models.BlogPost.*" />
+          <option value="pizza.models.Pizza.*" />
+          <option value="pizza.models.Topping.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

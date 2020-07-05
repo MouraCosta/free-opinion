@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'blogs/base.html' %}
+
+{% block page_header %}
+    <div class="jumbotron">
+        <h1>Free Opinion</h1>
+        <p class="lead">Com esses tempos de crise, pensei em criar um site chamado
+        Free Opinion. Você pode criar um um blog com um texto mostrando sua opinião
+        a todos. (Gabriel, 2020)</p>
+
+        <a class="btn btn-primary" href="{% url 'users:register' %}"
+           role="button">Registre-se &raquo;</a>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <h3>Regras e formas de usar o Free Opinion</h3>
+        </div>
+        <div class="card-body">
+            <p>1- Você tem apenas o direito de criar e editar um blog. Isso quer dizer<br>
+            que você será incapaz de deletar um blog.<br><br>
+
+            2- Não pregue o ódio no Free Opinion, até porque se der algo errado pra você,<br>
+            não poderá apagar o blog e ser BANIDO pelo administrador do site.<br><br>
+
+            3- Respeite os outros nos comentários<br><br>
+
+            4- Divirta-se :)<br><br>
+        </div>
+    </div>
+{% endblock page_header %}
+</body>
+</html>

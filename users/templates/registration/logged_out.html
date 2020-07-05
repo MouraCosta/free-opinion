@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+<p>Você saiu do Free opinion, seja livre</p>
+<a href="{% url 'blogs:index' %}">Voltar pra página INicial</a>
+{% endblock content %}
+</body>
+</html>

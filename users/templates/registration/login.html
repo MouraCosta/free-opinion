@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+    <h3>Fazendo Login</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <form action="{% url 'users:login' %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+        <button class="btn btn-primary" name="submit">Login</button>
+        {% endbuttons %}
+        <input type="hidden" value="{% url 'blogs:index' %}" name="next"/>
+    </form>
+{% endblock content %}
+</body>
+</html>

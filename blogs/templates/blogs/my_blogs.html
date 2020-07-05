@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+    <h3>Blogs de {{ user.username|title }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <div class="card mb-3">
+        <div class="card-body">
+            {% for blog in blogs %}
+                <li><a href="{% url 'blogs:blog' blog.id %}">{{blog.name|title}}</a></li>
+            {% empty %}
+                <p>Você ainda não postou nenhum blog</p>
+            {% endfor %}
+        </div>
+        <small><a href="{% url 'blogs:new_blog' %}">Novo blog</a></small>
+    </div>
+{% endblock content %}
+</body>
+</html>
