@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from . import models
@@ -34,7 +34,7 @@ def my_blogs(request):
 @login_required
 def blog(request, blog_id):
     """Renders the blog page."""
-    blog = models.Blog.objects.get(id=blog_id)
+    blog = get_object_or_404(models.Blog, id=blog_id)
     comments = blog.comment_set.order_by('-date_added')
     return render(request, 'blogs/blog.html', {'blog': blog,
                                                'comments': comments})
