@@ -82,7 +82,7 @@ def edit_blog(request, blog_id):
 @login_required
 def new_comment(request, blog_id):
     """Renders the page for adding comments about a blog."""
-    blog = models.Blog.objects.get(id=blog_id)
+    blog = get_object_or_404(models.Blog, id=blog_id)
     if request.method != 'POST':
         # Create a blank form
         form = forms.NewCommentForm()
